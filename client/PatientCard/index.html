@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Patient Card</title>
+		<script type="text/javascript" src="./js/jQuery.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.js"></script>
+		<script type="text/javascript" src="./js/custom.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/custom.css">
+	</head>
+	<body>
+		<form role="form" id="patientCard" name="patientCard" class="form-horizontal" action="server.html" method="post" target="_self">
+			<div class="header form-group col-md-12">
+				<h1>Patient Card</h1>
+			</div>
+			<div class="col-md-4">
+				<div class="basic-info col-md-12">
+					<div class="form-group col-md-12">
+						<h1 class="header"><i class="fa fa-address-card-o"></i> Basic Info</h1>
+					</div>
+					<div class="information form-group col-md-12">
+						<label for="firstName">First Name</label>
+						<input id="firstName" class="form-control" data-toggle="tooltip" title="Name cannot be empty">
+						<label for="middleName">Middle Name</label>
+						<input id="middleName" class="form-control" data-toggle="tooltip" title="Name cannot be empty">
+						<label for="lastName">Last Name</label>
+						<input id="lastName" class="form-control" data-toggle="tooltip" title="Name cannot be empty">
+						<label for="dateOfBirth">Date of Birth</label>
+						<input id="dateOfBirth" class="form-control" type="date" data-toggle="tooltip" title="Date of Birth is invalid or DoB + Age > today">
+						<label for="age">Age</label>
+						<input id="age" class="form-control" type="number" max="200" min="0" data-toggle="tooltip" title="Only integer between 0 and 200 is allowed">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="address-info col-md-12">
+					<div class="form-group col-md-12">
+						<h1 class="header"><i class="fa fa-home"></i> Address Info</h1>
+					</div>
+					<div class="information form-group col-md-12">
+						<label for="homeNO">Home/Street No.</label>
+						<input id="homeNO" class="form-control" data-toggle="tooltip" title="Address cannot be empty">
+						<label for="unit">Unit</label>
+						<input id="unit" class="form-control">
+						<label for="town">Town</label>
+						<input id="town" class="form-control">
+						<label for="city">City</label>
+						<input id="city" class="form-control" data-toggle="tooltip" title="City cannot be empty">
+						<label for="province">Province</label>
+						<select class="form-control">
+							<option value="AB">AB</option>
+  							<option value="BC">BC</option>
+  							<option value="MB">MB</option>
+  							<option value="NB">NB</option>
+  							<option value="NL">NL</option>
+							<option value="NT">NT</option>
+							<option value="NS">NS</option>
+							<option value="NU">NU</option>
+							<option value="ON">ON</option>
+							<option value="PE">PE</option>
+							<option value="QC">QC</option>
+							<option value="SK">SK</option>
+							<option value="YT">YT</option>
+						</select>
+					</div>
+				</div>	
+			</div>
+			<div class="col-md-4">
+				<div class="contact-info col-md-12">
+					<div class="form-group col-md-12">
+						<h1 class="header"><i class="fa fa-phone"></i> Contact Info</h1>
+					</div>
+					<div class="information form-group col-md-12">
+						<label for="mobilephone">Mobile Phone</label>
+						<input id="mobilephone" class="form-control" data-toggle="tooltip" title="Mobile phone number cannot be empty">
+						<label for="homephone">Home Phone</label>
+						<input id="homephone" class="form-control" data-toggle="tooltip" title="Home phone cannot be empty">
+						<label for="fax">Fax.</label>
+						<input id="fax" class="form-control">
+						<label for="emergency">Emergency Contact</label>
+						<input id="emergency" class="form-control" data-toggle="tooltip" title="Emergency contact is a MUST">
+						<label for="email">Email</label>
+						<input id="email" class="form-control" type="email">
+					</div>
+				</div>
+			</div>
+			<div class="button-sets col-md-12">
+				<div class="form-group">
+					<div class="btn-group btn-group-justified ">
+						<div class="btn-group btn-group-lg">
+							<button type="button" class="btn btn-primary">Allergies</button>
+						</div>
+						<div class="btn-group btn-group-lg">
+							<button type="button" class="btn btn-primary">Conditions</button>
+						</div>
+						<div class="btn-group btn-group-lg">
+							<button type="button" class="btn btn-primary">Family Doctor</button>
+						</div>
+						<div class="btn-group btn-group-lg">
+							<button type="button" class="btn btn-primary">Prescriptions</button>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="btn-group btn-group-justified ">
+						<div class="btn-group btn-group-lg">
+							<button type="button" class="btn btn-primary">Services</button>
+						</div>
+						<div class="btn-group btn-group-lg">
+							<button type="button" class="btn btn-primary">Notes</button>
+						</div>
+						<div class="btn-group btn-group-lg">
+							<button type="button" class="btn btn-primary">Diagnosis Graph</button>
+						</div>
+						<div class="btn-group btn-group-lg">
+							<button type="button" class="btn btn-primary">Attachment</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="detail-info form-group col-md-12">
+					<h1><i class="fa fa-medkit"></i> <span id="detail-title">Detail Info</span></h1>
+				</div>
+				<div class="detail-board form-group col-md-12" id="allergy-detail-board">
+					<div id="allergy-detail-1" class="panel panel-primary">
+						<div class="panel-heading">
+							<h1 class="panel-title">Allergy Info Snippet</h1>
+						</div>
+						<div class="allergy-block panel-body">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-label">Anaphylactogen</label>
+								<div class="col-md-3"><input class="form-control"></div>
+								<label class="col-md-1 control-label">Level</label>
+								<div class="col-md-1">
+									<select class="form-control">
+										<option value="1">1</option>
+  										<option value="2">2</option>
+  										<option value="3">3</option>
+  										<option value="4">4</option>
+  										<option value="5">5</option>
+									</select>
+								</div>
+								<label class="col-md-1 control-label">Duration</label>
+								<div class="col-md-1"><input class="form-control"></div>
+								<label class="col-md-1 control-label">Healed</label>
+								<div class="col-md-2">
+									<label class="check-container">
+										<input type="checkbox" class="checkbar" onClick="checkBox(event)"/> 
+									</label>
+								</div>
+							</div>
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-label">Allergy Reason</label>
+								<div class="col-md-4">
+									<textarea class="form-control" rows="5"></textarea>
+								</div>
+								<label class="col-md-2 control-label">Suggestion</label>
+								<div class="col-md-4">
+									<textarea class="form-control" rows="5"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="allergy-detail-2" class="panel panel-primary">
+						<div class="panel-heading">
+							<h1 class="panel-title">Allergy Info Snippet</h1>
+						</div>
+						<div class="allergy-block panel-body">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-label">Anaphylactogen</label>
+								<div class="col-md-3"><input class="form-control"></div>
+								<label class="col-md-1 control-label">Level</label>
+								<div class="col-md-1">
+									<select class="form-control">
+										<option value="1">1</option>
+  										<option value="2">2</option>
+  										<option value="3">3</option>
+  										<option value="4">4</option>
+  										<option value="5">5</option>
+									</select>
+								</div>
+								<label class="col-md-1 control-label">Duration</label>
+								<div class="col-md-1"><input class="form-control"></div>
+								<label class="col-md-1 control-label">Healed</label>
+								<div class="col-md-2">
+									<label class="check-container">
+										<input type="checkbox" class="checkbar" onClick="checkBox(event)"/> 
+									</label>
+								</div>
+							</div>
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-label">Allergy Reason</label>
+								<div class="col-md-4">
+									<textarea class="form-control" rows="5"></textarea>
+								</div>
+								<label class="col-md-2 control-label">Suggestion</label>
+								<div class="col-md-4">
+									<textarea class="form-control" rows="5"></textarea>
+								</div>
+							</div>
+							<div class="allergy-delete-button-wrap form-group col-md-12">
+								<button type="button" class="allergy-delete btn btn-danger"  data-toggle="modal" 
+									data-target="#allergy-delete" data-item="#allergy-detail-2">Delete</button>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="btn btn-success btn-block" onClick="allergyAdd(event)">Add New</button>
+				</div>
+				<div class="detail-board form-group col-md-12" id="condition-detail-board">
+					<ul class="nav nav-pills nav-justified">
+						<li class="active"><a href="#oral-health" data-toggle="tab">Oral Health</a></li>
+						<li><a href="#dental-health" data-toggle="tab">Dental Health</a></li>
+						<li><a href="#vision-health" data-toggle="tab">Vision Health</a></li>
+						<li><a href="#skin-health" data-toggle="tab">Skin Health</a></li>
+						<li><a href="#mental-health" data-toggle="tab">Mental Health</a></li>
+						<li><a href="#other-health" data-toggle="tab">Other Health</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active in fade" id="oral-health">
+							<textarea class="form-control" rows="8" 
+										 placeholder="Some oral health condition information should be here..."></textarea>
+						</div>
+						<div class="tab-pane fade" id="dental-health">
+							<textarea class="form-control" rows="8" 
+										 placeholder="Some dental health condition information should be here..."></textarea>
+						</div>
+						<div class="tab-pane fade" id="vision-health">
+							<textarea class="form-control" rows="8" 
+										 placeholder="Some vision health condition information should be here..."></textarea>
+						</div>
+						<div class="tab-pane fade" id="skin-health">
+							<textarea class="form-control" rows="8" 
+										 placeholder="Some skin health condition information should be here..."></textarea>
+						</div>
+						<div class="tab-pane fade" id="mental-health">
+							<textarea class="form-control" rows="8" 
+										 placeholder="Some mental health condition information should be here..."></textarea>
+						</div>
+						<div class="tab-pane fade" id="other-health">
+							<textarea class="form-control" rows="8" 
+										 placeholder="Some other health condition information should be here..."></textarea>
+						</div>
+					</div>
+					<div>
+						<h1 class="condition-suggestion"><i class="fa fa-user-circle"></i> Suggestion</h1>
+						<textarea class="form-control" rows="8" 
+										 placeholder="This place is used for doctor's suggestion or report"></textarea>
+					</div>
+				</div>
+				<div class="detail-board form-group col-md-12" id="doctor-detail-board">
+					<div class="col-md-4">
+						<div class="col-md-12">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h1 class="panel-title"><i class="fa fa-user-md"></i> Doctor Info</h1>
+								</div>
+								<table class="table">
+									<tr>
+										<th class="th-key">Name</th>
+										<th>Dr. Meow</th>
+									</tr>
+									<tr>
+										<th class="th-key">Age</th>
+										<th>40</th>
+									</tr>
+									<tr>
+										<th class="th-key">Speciality</th>
+										<th>Dentistry</th>
+									</tr>
+									<tr>
+										<th class="th-key">Period</th>
+										<th>5 year</th>
+									</tr>
+									<tr>
+										<th class="th-key">Contact</th>
+										<th>123-456-7890</th>
+									</tr>
+									<tr>
+										<th class="th-key">Office</th>
+										<th>38A Huron St.</th>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="col-md-12">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h1 class="panel-title"><i class="fa fa-bar-chart"></i> Skills Info</h1>
+								</div>
+								<div class="panel-body">
+									<p>Dentistry Skill</p>
+    								<div class="progress">
+  										<div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 75%">
+    										7.5
+  										</div>
+									</div>
+									<p>Surgery Skill</p>
+    								<div class="progress">
+  										<div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: 50%">
+    										5.0
+  										</div>
+									</div>
+									<p>Psychology Skill</p>
+    								<div class="progress">
+  										<div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 35%">
+    										3.5
+  										</div>
+									</div>
+  								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="col-md-12">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h1 class="panel-title"><i class="fa fa-user-circle"></i> Profile</h1>
+								</div>
+								<div class="panel-body">
+									<a class="thumbnail">
+      									<img src="./img/profile.jpg">
+    								</a>
+  								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-12">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h1 class="panel-title">Treatment History</h1>
+								</div>
+								<table class="table table-bordered table-striped">
+									<thead>
+										<tr>
+											<th>Period</th>
+											<th>Description</th>
+											<th>Note</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>2013-2014</td>
+											<td>Adopted Treat Plan A</td>
+											<td>Everything goes well</td>
+										</tr>
+										<tr>
+											<td>2015-2016</td>
+											<td>Adopted Treat Plan B</td>
+											<td>The suffering is alleviated</td>
+										</tr>
+										<tr>
+											<td>2017-2018</td>
+											<td>Adopted Treat Plan C</td>
+											<td>Patient is cured</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-12">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h1 class="panel-title">Suggestion</h1>
+								</div>
+								<div class="panel-body">
+									<p>Please use treat plan C to keep taking care of the patient</p>
+									<p>Please contact me if any accident happens...</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="detail-board form-group col-md-12" id="prescription-detail-board">
+					<div id="prescription-detail-1" class="panel panel-primary">
+						<div class="panel-heading">
+								<h1 class="panel-title">Medicine Record</h1>
+						</div>
+						<div class="prescription-block panel-body">
+							<div class="form-group col-md-12">
+								<label class="col-md-1 control-label">Name</label>
+								<div class="col-md-4"><input class="form-control"></div>
+								<label class="col-md-1 control-label">Number</label>
+								<div class="col-md-1"><input type="number" class="form-control" max="20"></div>
+								<label class="col-md-1 control-label">Courses</label>
+								<div class="col-md-1">
+									<select class="form-control">
+										<option value="1">1</option>
+  										<option value="2">2</option>
+  										<option value="3">3</option>
+  										<option value="4">4</option>
+  										<option value="5">5</option>
+									</select>
+								</div>
+								<label class="col-md-1 control-label">Date</label>
+								<div class="col-md-2"><input type="date" class="form-control"></div>
+							</div>
+							<div class="form-group col-md-12">
+								<label class="col-md-1 control-label">Guide</label>
+								<div class="col-md-11">
+									<textarea class="form-control" rows="5" 
+											  placeholder="Here should be some guide for this medicine"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="prescription-detail-2" class="panel panel-primary">
+						<div class="panel-heading">
+								<h1 class="panel-title">Medicine Record</h1>
+						</div>
+						<div class="prescription-block panel-body">
+							<div class="form-group col-md-12">
+								<label class="col-md-1 control-label">Name</label>
+								<div class="col-md-4"><input class="form-control"></div>
+								<label class="col-md-1 control-label">Number</label>
+								<div class="col-md-1"><input type="number" class="form-control" max="20"></div>
+								<label class="col-md-1 control-label">Courses</label>
+								<div class="col-md-1">
+									<select class="form-control">
+										<option value="1">1</option>
+  										<option value="2">2</option>
+  										<option value="3">3</option>
+  										<option value="4">4</option>
+  										<option value="5">5</option>
+									</select>
+								</div>
+								<label class="col-md-1 control-label">Date</label>
+								<div class="col-md-2"><input type="date" class="form-control"></div>
+							</div>
+							<div class="form-group col-md-12">
+								<label class="col-md-1 control-label">Guide</label>
+								<div class="col-md-11">
+									<textarea class="form-control" rows="5" 
+											  placeholder="Here should be some guide for this medicine"></textarea>
+								</div>
+							</div>
+							<div class="prescription-delete-button-wrap form-group col-md-12">
+								<button type="button" class="prescription-delete btn btn-danger"  data-toggle="modal" 
+									data-target="#prescription-delete" data-item="#prescription-detail-2">Delete</button>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="btn btn-success btn-block" onClick="prescriptionAdd(event)">Add New</button>
+				</div>
+				<div class="detail-board form-group col-md-12" id="service-detail-board">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+							<h1 class="panel-title">Service Record</h1>
+					</div>
+					<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th class="record-table-2">Name</th>
+									<th class="record-table-5">Description</th>
+									<th class="record-table-1">Active</th>
+									<th class="record-table-2">Expired Date</th>
+								</tr>
+							</thead>
+							<tbody id="Patient-Service-Table">
+								<tr>
+									<td class="record-table-2">Medscheck</td>
+									<td class="record-table-5 service-description">The MedsCheck program is a one-on-one interview between the pharmacist and the patient to review the patient’s prescription and non-prescription medications. The MedsCheck medication review will encourage patients to better understand their medication therapy and help to ensure their medications are taken as prescribed and that patients are getting the most benefit from their medications.</td>
+									<td class="record-table-1">Yes</td>
+									<td class="record-table-2">2020-03-22</td>
+								</tr>
+								<tr>
+									<td class="record-table-2">Ontario Drug Benefit</td>
+									<td class="record-table-5 service-description">The Ontario Drug Benefit program covers most of the cost of more than 4,400 prescription drug products.The Ontario Drug Benefit is for residents of the province only. Make sure your health card is valid (e.g. hasn’t expired). Your pharmacist will need it to confirm your eligibility for the Ontario Drug Benefit program and submit a claim to the ministry.</td>
+									<td class="record-table-1">No</td>
+									<td class="record-table-2">N/A</td>
+								</tr>
+								<tr>
+									<td class="record-table-2">Trillium Drug Program</td>
+									<td class="record-table-5 service-description">The Trillium Drug Program is for people who spend approximately 3 to 4% or more of their after-tax household income on prescription-drug costs. Your doctor and pharmacist keep track of all the generic and brand-name drugs covered by the Trillium Drug Program. The Trillium Drug Program covers the same drugs as the Ontario Drug Benefit.</td>
+									<td class="record-table-1">Yes</td>
+									<td class="record-table-2">2018-12-30</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="panel-footer">
+							<button type="button" class="btn btn-success btn-block" onClick="addService()">Load More (Demo Use Only)</button>
+						</div>
+					</div>
+				</div>
+				<div class="detail-board form-group col-md-12" id="note-detail-board">
+					<div class="form-group col-md-12">
+						<div class="editor-bar btn-group btn-group-justified">
+  							<div class="btn-group">
+    							<button type="button" class="btn btn-default">Smaller</button>
+  							</div>
+  							<div class="btn-group">
+								<button type="button" class="btn btn-default">Larger</button>
+  							</div>
+							<div class="btn-group">
+    							<button type="button" class="btn btn-default">Left</button>
+  							</div>
+  							<div class="btn-group">
+    							<button type="button" class="btn btn-default">Center</button>
+  							</div>
+							<div class="btn-group">
+    							<button type="button" class="btn btn-default">Right</button>
+  							</div>
+							<div class="btn-group">
+    							<button type="button" class="btn btn-default">Justify</button>
+  							</div>
+						</div>
+						<textarea id="editor" class="editor"></textarea>
+					</div>
+				</div>
+				<div class="detail-board form-group col-md-12" id="graph-detail-board">
+					<div id="carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel" data-slide-to="1"></li>
+							<li data-target="#carousel" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<a><img src="./img/slide01.jpg" width="100%"></a>
+							</div>
+							<div class="item">
+								<a><img src="./img/slide02.jpg" width="100%"></a>
+							</div>
+							<div class="item">
+								<a><img src="./img/slide03.jpg" width="100%"></a>
+							</div>
+						</div>
+						<a class="left carousel-control" href="#carousel" data-slide="prev">
+							<i class="fa fa-hand-o-left"></i> 
+						</a>
+						<a class="right carousel-control" href="#carousel" data-slide="next">
+							<i class="fa fa-hand-o-right"></i> 
+						</a>
+					</div>
+				</div>
+				<div class="detail-board form-group col-md-12" id="attachment-detail-board">
+					<div class="form-group browse-block">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h1 class="panel-title">Files Overview</h1>
+							</div>
+							<table class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Size</th>
+										<th>Last Modified</th>
+									</tr>
+								</thead>
+								<tbody id="fileInfo">
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="browse-button-block form-group browse-block">
+						<input id="fileUpload" name="fileUpload[]" type="file" class="form-control" multiple onChange="fileChanged(event)">
+						<button type="button" class="browse-button btn btn-success" onClick="browse()"><i class="fa fa-folder-open-o"></i> Click to Browse</button>
+					</div>
+				</div>
+			</div>
+			<div class="submit-block col-md-12">
+				<button type="button" class="btn btn-primary btn-block" onClick="formSubmit()"><i class="fa fa-hand-peace-o"></i> Confirm &#38; Submit</button>
+			</div>
+		</form>
+		<div id="modal-sets">
+			<div id="allergy-delete" class="modal fade" tabindex="-1" data-backdrop="static">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3>Allergy Snippet Delete Notice</h3>
+						</div>
+						<div class="modal-body">
+							<p>Do you really want to delete this allergy record snippet ?</p> 
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" onClick="DeleteItem(event)">Confirm</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal" >Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="prescription-delete" class="modal fade" tabindex="-1" data-backdrop="static">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3>Prescription Medicine Delete Notice</h3>
+						</div>
+						<div class="modal-body">
+							<p>Delete this medcine record and it will be invalid, is that ok?</p> 
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" onClick="DeleteItem(event)">Confirm</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal" >Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="signatureToSubmit" class="modal fade" tabindex="-1" data-backdrop="static">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3>Submission Signature</h3>
+						</div>
+						<div class="modal-body">
+							<p>Please sign your name then confirm to submit the update</p>
+							<input class="signature form-control" id="signature" class="form-control" 
+								   placeholder="Sign your name here..." tooltip="You must signature before submit"
+								   onInput="signed(event)">
+						</div>
+						<div class="modal-footer">
+							<button id="sub-button" type="button" class="btn btn-primary" onClick="Submitted()" disabled>Confirm</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal" >Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

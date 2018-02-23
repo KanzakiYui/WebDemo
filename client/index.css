@@ -1,0 +1,79 @@
+html, body{
+	font-size: 1.5rem;
+}
+#topBar{
+	background-color: #20232a;
+	padding: 1.5rem 3rem;
+	padding-bottom: 0px;
+}
+#topBar>h1{
+	color: #61dafb;
+	text-align: center;
+	line-height: 1.5;
+	margin-bottom: 0px;
+}
+#topBar p{
+	color: #fff;
+}
+div.nav{
+	width: 40%;
+}
+button.listButton{
+	outline: none;
+	border-radius: 0.5rem;
+	padding:  0.75rem 1.25rem;
+	border: 1px solid #20232a;
+	background-color: #20232a;
+	color: #61dafb;
+	font-weight: bold;
+}
+button.listButton:hover{
+	background-color: #1c3a7cf0;
+	color: #fff;
+	cursor: pointer;
+}
+button.listButton:active{
+	background-color: #dc3545;
+	color: #fff;
+}
+#example1>div.card,
+#example2>div.card{
+	border-radius: 0.5rem;
+}
+#example1>div.card div.card-header,
+#example2>div.card div.card-header{
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	background-color: #20232a;
+	color: #61dafb;
+	text-align: center;
+	font-weight: bold;
+}
+#example1>div.card div.card-body,
+#example2>div.card div.card-body{
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	font-size: 1rem;
+	background-color: #cacdf559;
+}
+#example1>div.card div.card-body a,
+#example2>div.card div.card-body a{
+	background-color: #20232a;
+	color: #61dafb;
+	border: 1px solid #20232a;
+	border-radius: 0.5rem;
+	padding: 0.75rem 1.25rem;
+	font-weight: bold;
+}
+#example1>div.card div.card-body a:hover,
+#example2>div.card div.card-body a:hover{
+	background-color: #1c3a7cf0;
+	color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+}
+#example1>div.card div.card-body a:active,
+#example2>div.card div.card-body a:active{
+	background-color: #dc3545;
+	color: #fff;
+}

@@ -1,0 +1,555 @@
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
+form.form-horizontal{
+	margin: 2% 2%; 
+	padding: 2% 0px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+	border-radius: 1em;
+	-webkit-animation: fadeIn 2s 0.5s 1;
+  	animation: fadeIn 2s 0.5s 1;
+	margin-bottom: 500px;
+}
+
+.form-horizontal .form-group{
+	margin-right: 0px; 
+    margin-left: 0px; 
+}
+
+div.header h1{
+	text-align: center;
+	text-transform: uppercase; 
+	color: #07508e;
+	font-size: 4em;
+	letter-spacing: 0.5em;
+	word-spacing: 1em;
+}
+
+div.basic-info, div.address-info, div.contact-info{
+	border: 1px solid #ccc;
+	overflow: hidden;
+	border-radius: 1em;
+}
+
+div.basic-info h1.header, div.address-info h1.header, div.contact-info h1.header{
+	text-align: center;
+	text-transform: uppercase; 
+	color: #07508e;
+	font-size: 2em;
+	letter-spacing: 0.15em;
+	word-spacing: 0.5em;
+	font-weight: bolder;
+}
+
+div.information label{
+	font-size: 22px;
+	font-weight: bold;
+	color: #07508e;
+}
+
+div.information input, div.information select{
+	font-size: 22px;
+	padding: 5px;
+	padding-left: 10px;
+	height: auto;
+}
+div.information select{
+	height: 47px;
+	padding-left: 16px;
+}
+
+div.button-sets{
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+div.button-sets div.btn-group-lg>button.btn{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+div.button-sets div.btn-group-lg>button.btn:focus{
+	background-color: orange;
+}
+
+div.button-sets div.btn-group-lg>button.btn:hover{
+	background-color: orange;
+}
+
+div.detail-board{
+	display: none;
+}
+
+div.detail-info h1{
+	text-align: center;
+	color: #07508e;
+	font-weight: bolder; 
+	font-size: 2.5em;
+	letter-spacing: 0.25em;
+	word-spacing: 0.5em;
+}
+
+div.allergy-delete-button-wrap{
+	text-align: center
+}
+
+button.allergy-delete{
+	margin:auto;
+	font-size: 22px;
+}
+
+button.btn-block{
+	font-size: 22px;
+	font-weight:bold;
+}
+
+
+div.allergy-block label, div.prescription-block label{
+	font-size: 22px; 
+	font-weight: bold; 
+	color: #07508e;
+}
+
+div.allergy-block input, div.prescription-block input{
+	font-size: 22px; 
+	height: 44px;
+}
+
+div.allergy-block select, div.prescription-block select{
+	font-size: 22px; 
+	height: 46px;
+	padding-left: 18px;
+}
+
+.checkbar { 
+    display: none; 
+} 
+	
+label.check-container {
+	background-color: #fafbfa;
+	padding: 9px;
+	border-radius: 50px;
+	display: inline-block;
+	position: relative;
+	margin-right: 30px;
+	-webkit-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+	width: 100%;
+	height: 44px;
+}
+
+label.check-container:after {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	-webkit-transition: box-shadow 0.1s ease-in;
+	transition: box-shadow 0.1s ease-in;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 100px;
+	box-shadow: inset 0 0 0 0 #eee, 0 0 1px rgba(0,0,0,0.4);
+	background-color: grey;
+}
+
+label.check-container:before {
+	content: ' ';
+	position: absolute;
+	background: white;
+	top: 1px;
+	left: 1px;
+	z-index: 999999;
+	width: 42px;
+	height: 42px;
+	-webkit-transition: all 0.1s ease-in;
+	transition: all 0.33s ease-in;
+	border-radius: 100px;
+	box-shadow: 0 3px 1px rgba(0,0,0,0.05), 0 0px 1px rgba(0,0,0,0.3);
+}
+
+label.check-container-checked:before {
+	content: ' ';
+	position: absolute;
+	left: calc(100% - 42px);
+	border-radius: 100px;
+}
+
+label.check-container-checked:after {
+	content: ' ';
+	font-size: 1.5em;
+	position: absolute;
+	background-color: #4cda60;
+	box-shadow: 0 0 1px #4cda60;
+}
+
+div.allergy-block textarea, div.prescription-block textarea{
+	font-size: 22px; 
+	resize: none;
+}
+
+div.modal-dialog{
+	top: 25%;
+}
+
+div.modal-header h3{
+	text-align: center; font-size: 30px; font-weight: bold; color: #950a0a;
+}
+
+div.modal-body p{
+	font-size: 22px; color: #031f5d;
+}
+
+div.modal-footer button{
+	font-size: 24px;
+}
+
+div.detail-board ul.nav-justified{
+	margin-bottom: 16px;
+}
+
+div.detail-board ul.nav-justified>li>a{
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+#condition-detail-board .tab-content{
+	margin-top: 24px;
+	margin-bottom: 32px;
+}
+
+#condition-detail-board textarea{
+	border-radius: 10px;
+	resize: none;
+	font-size: 22px;
+	padding: 8px 14px;
+}
+
+h1.condition-suggestion{
+	text-align: center;
+	font-weight: bold;
+	font-size: 2.5em;
+	letter-spacing: 0.25em;
+	word-spacing: 0.5em;
+	color: #07508e;
+}
+
+#allergy-detail-board h1.panel-title,
+#doctor-detail-board h1.panel-title, 
+#prescription-detail-board h1.panel-title, 
+#service-detail-board h1.panel-title,
+#attachment-detail-board h1.panel-title{
+	text-align: center;
+	text-transform: uppercase; 
+	font-size: 2em;
+	word-spacing: 0.3em;
+	font-weight: bold;
+}
+
+#doctor-detail-board table.table th, 
+#doctor-detail-board table.table td,
+#service-detail-board table.table th, 
+#service-detail-board table.table td,
+#attachment-detail-board table.table th,
+#attachment-detail-board table.table td{
+	vertical-align: middle;
+	text-align: center;
+	font-size: 24px;
+}
+
+
+#doctor-detail-board table.table th.th-key{
+	background-color: #e7e7e7;
+}
+
+#doctor-detail-board div.panel-body{
+	padding-bottom: 0px;
+}
+
+#doctor-detail-board div.panel-body p{
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#doctor-detail-board div.panel-body .progress{
+	height: 32px;
+	
+}
+
+#doctor-detail-board div.panel-body .progress-bar{
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 32px;
+}
+
+a.thumbnail img{
+	width: 100%;
+}
+
+div.prescription-delete-button-wrap{
+	text-align: center
+}
+
+button.prescription-delete{
+	margin:auto;
+	font-size: 22px;
+}
+
+#service-detail-board table.table td.service-description{
+	text-align: justify;
+}
+
+#service-detail-board table.table th, #service-detail-board table.table td{
+	padding: 25px 15px;
+}
+
+th.record-table-1, td.record-table-1{
+	width: 10%;
+}
+
+th.record-table-2, td.record-table-2{
+	width: 20%;
+}
+
+th.record-table-5, td.record-table-5{
+	width: 50%;
+}
+
+div.panel-footer{
+	margin-top: 24px;
+}
+
+
+
+#carousel .carousel-indicators li{ 
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border-width: 5px; 
+	border-color: #07508e; 
+	box-shadow: 5px 5px 10px grey;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+#carousel .carousel-indicators li.active{
+	background-color: #07508e;
+}
+
+#carousel .carousel-control {
+	color: #07508e;
+}
+#carousel .carousel-control i{
+	text-align: justify;
+	font-size: 70px;
+	position: relative;
+	top: calc(50% - 40px);
+}
+
+input[type="file"]{
+	display: none;
+}
+
+div.browse-block{
+	margin-top: 30px;
+	margin-bottom: 25px;
+}
+
+div.browse-button-block{
+	text-align: center;
+}
+
+button.browse-button{
+	margin: auto;
+	font-size: 30px;
+}
+
+div.tooltip{
+	 font-size: 16px;
+}
+
+div.tooltip-inner {
+	 background-color: red;
+	 border-radius: 8px;
+	 max-width: 350px;
+}
+
+div.tooltip.top div.tooltip-arrow {
+	 border-top-color: red;
+}
+
+div.submit-block{
+	margin-top: 120px;
+}
+
+div.submit-block button{
+	border-radius: 12px;
+}
+
+input.signature{
+	font-size: 26px;
+	border-radius: 8px;
+	height: 40px;
+}
+
+#sub-button[disabled]{
+	background-color: grey;
+}
+
+textarea.editor{
+	border: 1px solid #ccc;
+	overflow: scroll;
+	border-radius: 1em;
+	width: 100%;
+	height: 400px;
+	padding: 20px 30px;
+	font-size: 36px;
+	text-align: justify;
+	outline: none;
+}
+
+div.editor-bar{
+	margin-top: 25px;
+	margin-bottom: 15px;
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+}
+
+div.editor-bar button{
+	font-size: 22px;
+}
+
+@media screen and (min-width: 1921px){
+	div.header h1{
+		font-size: 5em;
+		letter-spacing: 0.75em;
+		word-spacing: 1.25em;
+	}
+	div.basic-info h1.header, div.address-info h1.header, div.contact-info h1.header{
+		font-size: 2.5em;
+		letter-spacing: 0.2em;
+		word-spacing: 0.5em;
+	}
+	div.information label{
+		font-size: 32px;
+	}
+	div.information input, div.information select{
+		font-size: 32px;
+		padding: 10px;
+		padding-left: 15px;
+	}
+	div.information select{
+		height: 70px;
+		padding-left: 22px;
+	}
+	div.button-sets div.btn-group-lg>button.btn{
+		font-size: 28px;
+	}
+	div.detail-info h1{
+		font-size: 3.5em;
+		letter-spacing: 0.3em;
+		word-spacing: 1em;
+	}
+	button.allergy-delete{
+		font-size: 32px;
+	}
+	button.btn-block{
+		font-size: 32px;
+	}
+	div.allergy-block label, div.prescription-block label{
+		font-size: 32px; 
+	}
+	div.allergy-block input, div.prescription-block input{
+		font-size: 32px; 
+		height: 54px;
+	}
+	div.allergy-block select, div.prescription-block select{
+		font-size: 32px; 
+		height: 56px;
+		padding-left: 24px;
+	}
+	label.check-container {
+		height: 52px;
+	}
+	label.check-container:before {
+		height: 50px;
+		width: 50px;
+	}
+	label.check-container-checked:before {
+		left: calc(100% - 50px);
+		border-radius: 100px;
+	}
+	div.allergy-block textarea, div.prescription-block textarea{
+		font-size: 32px; 
+	}
+	div.modal-header h3{
+		font-size: 40px; 
+	}
+	div.modal-body p{
+		font-size: 32px;
+	}
+	div.modal-footer button{
+		font-size: 32px;
+	}
+	div.detail-board ul.nav-justified>li>a{
+		font-size: 32px;
+	}
+	div.detail-board ul.nav-justified{
+		margin-bottom: 20px;
+	}
+	#condition-detail-board textarea{
+		font-size: 28px;
+		padding: 12px 18px;
+	}
+	#condition-detail-board .tab-content{
+		margin-top: 32px;
+		margin-bottom: 44px;
+	}
+	h1.condition-suggestion{
+		font-size: 3.5em;
+		letter-spacing: 0.3em;
+		word-spacing: 1em;
+	}
+	#allergy-detail-board h1.panel-title,
+	#doctor-detail-board h1.panel-title, 
+	#prescription-detail-board h1.panel-title, 
+	#service-detail-board h1.panel-title,
+	#attachment-detail-board h1.panel-title{
+		font-size: 2.5em;
+		word-spacing: 0.5em;
+	}
+	#doctor-detail-board table.table th, 
+	#doctor-detail-board table.table td,
+	#service-detail-board table.table th, 
+	#service-detail-board table.table td,
+	#attachment-detail-board table.table td{
+		font-size: 28px;
+	}
+	#doctor-detail-board div.panel-body p{
+		font-size: 32px;
+	}
+	button.prescription-delete{
+		font-size: 32px;
+	}
+	button.browse-button{
+		font-size: 40px;
+	}
+	div.tooltip{
+	 	font-size: 22px;
+	}
+ 	div.tooltip-inner {
+	 	border-radius: 10px;
+		max-width: 450px;
+	}
+	input.signature{
+		font-size: 34px;
+		border-radius: 12px;
+		height: 48px;
+	}
+	div.editor-bar button{
+		font-size: 28px;
+	}
+}
